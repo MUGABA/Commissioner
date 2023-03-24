@@ -10,7 +10,7 @@ app.use(express.static("client/build"));
 require("./src/startup")(app);
 connection();
 
-app.get("/", () => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
