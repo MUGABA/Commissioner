@@ -11,7 +11,7 @@ module.exports = (app) => {
   app.use(express.urlencoded({ extended: true }));
 
   app.get("/", (req, res) => {
-    res.status(200).send({ message: "message received" });
+    return res.status(200).send({ message: "message received" });
   });
 
   app.use("/auth", Users);
