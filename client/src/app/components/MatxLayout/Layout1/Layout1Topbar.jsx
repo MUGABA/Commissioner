@@ -139,6 +139,14 @@ const Layout1Topbar = () => {
               <UserMenu>
                 <Hidden xsDown>
                   <Span>
+                    <Link to="/dashboard/register-doc"> Register Doctor</Link>
+                  </Span>
+                </Hidden>
+              </UserMenu>
+
+              <UserMenu>
+                <Hidden xsDown>
+                  <Span>
                     <Link to="/dashboard/view-my-requests">My Requests</Link>
                   </Span>
                 </Hidden>

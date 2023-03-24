@@ -33,7 +33,7 @@ const initialValues = {
   email: '',
   password: '',
   fullName: '',
-  userSide: 'Doctor',
+  userSide: 'Admin',
   levelOfEducation: '',
 };
 
