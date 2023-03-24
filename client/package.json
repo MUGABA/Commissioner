@@ -1,7 +1,7 @@
 {
   "name": "matx-react",
   "version": "3.0.0",
-  "homepage": ".",
+  "homepage": "https://uganda-nutrition-app.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.19.2",
