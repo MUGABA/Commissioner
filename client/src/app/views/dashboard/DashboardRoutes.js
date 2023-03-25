@@ -10,9 +10,10 @@ const AddFood = Loadable(lazy(() => import('../sessions/AddFood')));
 const AskDietHelp = Loadable(lazy(() => import('../sessions/AddDietRequest')));
 const ViewPatientRequests = Loadable(lazy(() => import('../sessions/ViewPatientsRequests')));
 const ViewMyRequests = Loadable(lazy(() => import('../sessions/ViewMyRequests')));
+const ViewAccording = Loadable(lazy(() => import('../sessions/ViewAccording')));
 
 const dashboardRoutes = [
-  { path: '/dashboard/default', element: <Analytics />, auth: authRoles.admin },
+  { path: '/dashboard/default', element: <ViewAccording />, auth: authRoles.admin },
   { path: '/dashboard/register-doc', element: <RegisterDoc /> },
   { path: '/dashboard/view-users', element: <ViewUsers /> },
   { path: '/dashboard/add-food', element: <AddFood /> },
