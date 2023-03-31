@@ -72,7 +72,7 @@ const AddPatientInformation = () => {
       data: { data },
     } = await axios.get(`${url.url}/patient/details`);
 
-    setDetails(data);
+    if (data) setDetails(data);
   };
 
   useEffect(() => {
