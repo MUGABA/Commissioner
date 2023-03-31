@@ -90,8 +90,6 @@ const Layout1Topbar = () => {
     updateSidebarMode({ mode });
   };
 
-  console.log(user);
-
   return (
     <TopbarRoot>
       <TopbarContainer>
@@ -140,6 +138,14 @@ const Layout1Topbar = () => {
                 <Hidden xsDown>
                   <Span>
                     <Link to="/dashboard/view-my-requests">My Requests</Link>
+                  </Span>
+                </Hidden>
+              </UserMenu>
+
+              <UserMenu>
+                <Hidden xsDown>
+                  <Span>
+                    <Link to="/dashboard/patient-details">My Details</Link>
                   </Span>
                 </Hidden>
               </UserMenu>

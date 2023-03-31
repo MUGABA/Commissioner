@@ -1,4 +1,4 @@
-import EditIcon from '@mui/icons-material/Edit';
+import { Button } from '@mui/material';
 import axios from 'axios.js';
 import url from 'connectionString';
 import { useEffect, useState } from 'react';
@@ -24,6 +24,10 @@ const ViewPatientRequests = () => {
     navigate(`/dashboard/doctor-give-response/${item.id}`);
   };
 
+  const redirectViewDetails = (item) => {
+    navigate(`/dashboard/patient-details/${item.createdBy}`);
+  };
+
   const columns = [
     { name: 'Requester Name', content: (item) => <>{item.User.fullName}</> },
     { name: 'Requester Email', content: (item) => <>{item.User.email}</> },
@@ -38,11 +42,28 @@ const ViewPatientRequests = () => {
       name: 'Actions',
       content: (item) => (
         <>
-          <EditIcon
+          <Button
             onClick={() => {
               redirectToAddRecommendedFood(item);
             }}
-          />
+          >
+            Acton
+          </Button>
+        </>
+      ),
+    },
+
+    {
+      name: 'Patient Details',
+      content: (item) => (
+        <>
+          <Button
+            onClick={() => {
+              redirectViewDetails(item);
+            }}
+          >
+            patient Details
+          </Button>
         </>
       ),
     },

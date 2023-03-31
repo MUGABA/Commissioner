@@ -11,6 +11,8 @@ const AskDietHelp = Loadable(lazy(() => import('../sessions/AddDietRequest')));
 const ViewPatientRequests = Loadable(lazy(() => import('../sessions/ViewPatientsRequests')));
 const ViewMyRequests = Loadable(lazy(() => import('../sessions/ViewMyRequests')));
 const ViewAccording = Loadable(lazy(() => import('../sessions/ViewAccording')));
+const AddPatientInformation = Loadable(lazy(() => import('../sessions/AddPatientInformation')));
+const ViewPatientDetails = Loadable(lazy(() => import('../sessions/ViewPatientDetails')));
 
 const dashboardRoutes = [
   { path: '/dashboard/default', element: <ViewAccording />, auth: authRoles.admin },
@@ -22,6 +24,8 @@ const dashboardRoutes = [
   { path: '/dashboard/view-patient-requests', element: <ViewPatientRequests /> },
   { path: '/dashboard/view-my-requests', element: <ViewMyRequests /> },
   { path: '/dashboard/doctor-give-response/:requestId', element: <AskDietHelp /> },
+  { path: '/dashboard/patient-details', element: <AddPatientInformation /> },
+  { path: '/dashboard/patient-details/:id', element: <ViewPatientDetails /> },
 ];
 
 export default dashboardRoutes;

@@ -106,7 +106,7 @@ const AskDietHelp = () => {
     }
 
     let recommendedFoods = '';
-    for (const food of allergies) {
+    for (const food of suggestedFoods) {
       recommendedFoods += `${food.name},`;
     }
 
@@ -136,7 +136,7 @@ const AskDietHelp = () => {
   return (
     <Container>
       <Card className="card">
-        <Typography variant="h4" sx={{ textAlign: 'center' }}>
+        <Typography variant="h5" sx={{ textAlign: 'center' }}>
           Send Nutrition request
         </Typography>
         <Grid container>

@@ -4,6 +4,7 @@ const cors = require("cors");
 const Users = require("./controllers/authController");
 const Food = require("./controllers/foodController");
 const Care = require("./controllers/careController");
+const PatientDetails = require("./controllers/patientController");
 
 module.exports = (app) => {
   app.use(cors());
@@ -17,4 +18,5 @@ module.exports = (app) => {
   app.use("/auth", Users);
   app.use("/food", Food);
   app.use("/cares", Care);
+  app.use("/patient", PatientDetails);
 };
