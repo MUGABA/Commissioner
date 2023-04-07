@@ -1,6 +1,6 @@
 import { useTheme } from '@emotion/react';
 import { LoadingButton } from '@mui/lab';
-import { Box, Card, Grid, TextField } from '@mui/material';
+import { Box, Card, Grid, TextField, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import axios from 'axios.js';
 import url from 'connectionString';
@@ -64,6 +64,9 @@ const AddFood = () => {
   return (
     <Container>
       <Card className="card">
+        <Typography variant="h4" sx={{ textAlign: 'center' }}>
+          Add Food
+        </Typography>
         <Grid container>
           <Grid item sm={12} xs={12}>
             <Box p={4} height="100%">

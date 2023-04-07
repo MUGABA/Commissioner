@@ -3,13 +3,10 @@ import { Box, styled, Table, TableBody, TableCell, TableHead, TableRow } from '@
 import { get } from 'lodash';
 
 const StyledTable = styled(Table)(({ theme }) => ({
-  whiteSpace: 'pre',
-  '& thead': {
-    '& tr': { '& th': { paddingLeft: 0, paddingRight: 0 } },
-  },
-  '& tbody': {
-    '& tr': { '& td': { paddingLeft: 0, textTransform: 'capitalize' } },
-  },
+  width: 0,
+  minWidth: '100%',
+  overflow: 'auto',
+  whiteSpace: 'nowrap',
 }));
 
 const renderCell = (item, column) => {
@@ -19,7 +16,7 @@ const renderCell = (item, column) => {
 
 const CustomTable = ({ columns, data }) => {
   return (
-    <Box width="100%" overflow="auto">
+    <Box sx={{ display: 'block', overflowY: 'auto', whiteSpace: 'nowrap' }} component={Table}>
       <StyledTable>
         <TableHead>
           <TableRow>
@@ -31,7 +28,7 @@ const CustomTable = ({ columns, data }) => {
           </TableRow>
         </TableHead>
 
-        <TableBody>
+        <TableBody sx={{ width: '100%' }}>
           {data.map((item, index) => (
             <TableRow key={index}>
               {columns.map((column, idx) => (

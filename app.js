@@ -17,3 +17,5 @@ const port = process.env.PORT || 5006;
 
 app.listen(port, () => console.log("Server is running now"));
 //postgres://app_rw_pvhlxqoh633d7ke5j6n5fikgcy:ARozWGD1lU-T-PgTi0S6k0AYRlxTqkag@pg-tunnel.borealis-data.com:55859/dkj6ffetoqkyxtdtp7epvv6fg2a
+
+//"postgres://postgres:postgres@localhost:5432/commissioner"

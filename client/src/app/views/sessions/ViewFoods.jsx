@@ -1,8 +1,8 @@
+import { Typography } from '@mui/material';
 import axios from 'axios.js';
 import url from 'connectionString';
 import { useEffect, useState } from 'react';
 import CustomTable from '../material-kit/tables/ReUsableTable';
-import { Container } from './RegisterDoc';
 
 const ViewFoods = () => {
   const [users, setUsers] = useState([]);
@@ -23,9 +23,12 @@ const ViewFoods = () => {
   }, [loading]);
 
   return (
-    <Container>
+    <>
+      <Typography variant="h4" sx={{ textAlign: 'center' }}>
+        View Foods
+      </Typography>
       <CustomTable columns={columns} data={users} />;
-    </Container>
+    </>
   );
 };
 

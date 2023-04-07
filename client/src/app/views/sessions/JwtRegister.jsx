@@ -61,7 +61,7 @@ const JwtRegister = () => {
 
     try {
       register(values.email, values.fullName, values.password, values.userSide);
-      navigate('/');
+      navigate('/dashboard/patient-details');
       setLoading(false);
     } catch (e) {
       console.log(e);

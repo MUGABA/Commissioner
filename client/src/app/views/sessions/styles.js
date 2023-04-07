@@ -17,6 +17,34 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'rgba(0, 0, 0, 0.08)',
     },
   },
+
+  root: {
+    width: '100%',
+    display: 'flex',
+    margin: '.25rem',
+    borderRadius: '25px',
+  },
+  label: {
+    width: '20%',
+    border: '0.5px solid',
+    padding: '10px',
+    fontWeight: 'bold',
+    borderColor: theme.palette.grey[600],
+    borderTopLeftRadius: '.25rem',
+    borderBottomLeftRadius: '.25rem',
+  },
+  value: {
+    width: '70%',
+    border: '0.5px solid',
+    padding: '10px',
+    borderColor: theme.palette.grey[600],
+    borderTopRightRadius: '.25rem',
+    borderBottomRightRadius: '.25rem',
+  },
+  update: {
+    backgroundColor: 'Blue',
+    color: 'white',
+  },
 }));
 
 const ITEM_HEIGHT = 48;

@@ -1,10 +1,9 @@
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import axios from 'axios.js';
 import url from 'connectionString';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CustomTable from '../material-kit/tables/ReUsableTable';
-import { Container } from './RegisterDoc';
 
 const ViewPatientRequests = () => {
   const [requests, setRequests] = useState([]);
@@ -74,9 +73,14 @@ const ViewPatientRequests = () => {
   }, [loading]);
 
   return (
-    <Container>
-      <CustomTable columns={columns} data={requests} />;
-    </Container>
+    <>
+      <Typography variant="h4" sx={{ textAlign: 'center' }}>
+        Patient requests
+      </Typography>
+      <CustomTable columns={columns} data={requests} />
+    </>
+    // <Container>
+    // </Container>
   );
 };
 

@@ -119,6 +119,14 @@ const Layout1Topbar = () => {
                   </Span>
                 </Hidden>
               </UserMenu>
+
+              <UserMenu>
+                <Hidden xsDown>
+                  <Span>
+                    <Link to="/dashboard/view-foods">View Foods</Link>
+                  </Span>
+                </Hidden>
+              </UserMenu>
             </>
           ) : (
             ''

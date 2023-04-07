@@ -3,8 +3,8 @@ import url from 'connectionString';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CustomTable from '../material-kit/tables/ReUsableTable';
-import { Container } from './RegisterDoc';
 
+import { Typography } from '@mui/material';
 import useAuth from 'app/hooks/useAuth';
 
 const ViewMyRequests = () => {
@@ -40,9 +40,12 @@ const ViewMyRequests = () => {
   }, [loading]);
 
   return (
-    <Container>
+    <>
+      <Typography variant="h4" sx={{ textAlign: 'center' }}>
+        Patient requests
+      </Typography>
       <CustomTable columns={columns} data={requests} />;
-    </Container>
+    </>
   );
 };
 

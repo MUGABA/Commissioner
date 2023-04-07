@@ -1,8 +1,8 @@
+import { Typography } from '@mui/material';
 import axios from 'axios.js';
 import url from 'connectionString';
 import { useEffect, useState } from 'react';
 import CustomTable from '../material-kit/tables/ReUsableTable';
-import { Container } from './RegisterDoc';
 
 const ViewUsers = () => {
   const [users, setUsers] = useState([]);
@@ -12,8 +12,6 @@ const ViewUsers = () => {
     const {
       data: { data },
     } = await axios.get(`${url.url}/auth/users`);
-
-    console.log(data);
 
     setUsers(data);
   };
@@ -30,9 +28,12 @@ const ViewUsers = () => {
   }, [loading]);
 
   return (
-    <Container>
+    <>
+      <Typography variant="h4" sx={{ textAlign: 'center' }}>
+        List of users
+      </Typography>
       <CustomTable columns={columns} data={users} />;
-    </Container>
+    </>
   );
 };
 

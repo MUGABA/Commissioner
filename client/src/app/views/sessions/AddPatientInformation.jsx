@@ -124,7 +124,7 @@ const AddPatientInformation = () => {
     <Container>
       <Card className="card">
         <Typography variant="h4" sx={{ textAlign: 'center' }}>
-          Add your details here
+          Please give tell us more about you here
         </Typography>
         <Grid container>
           <Grid item sm={12} xs={12}>

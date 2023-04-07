@@ -1,6 +1,7 @@
 const express = require("express");
 const auth = require("../middlewares/auth");
 const PatientDetails = require("../models/patientDetails");
+const User = require("../models/authModel");
 
 const router = express.Router();
 
@@ -36,7 +37,15 @@ router.get("/details", auth, async (req, res) => {
 router.get("/patient-details/:id", auth, async (req, res) => {
   const { id } = req.params;
 
-  const patient = await PatientDetails.findOne({ where: { patientId: id } });
+  const patient = await PatientDetails.findOne({
+    where: { patientId: id },
+    include: [
+      {
+        model: User,
+        attributes: ["fullName", "email"],
+      },
+    ],
+  });
 
   return res.status(200).send({ data: patient });
 });
