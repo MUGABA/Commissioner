@@ -117,7 +117,7 @@ const AskDietHelp = () => {
     };
     try {
       await sendRequest(obj);
-      navigate('/dashboard/view-patient-requests');
+      navigate('/dashboard/view-my-requests');
       setLoading(false);
     } catch (e) {
       setLoading(false);
