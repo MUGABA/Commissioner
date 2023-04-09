@@ -57,6 +57,7 @@ const ViewPatientDetails = () => {
     occupation: '',
     physicalActivities: '',
     location: '',
+    gender: '',
     User: {
       fullName: '',
       email: '',
@@ -103,6 +104,7 @@ const ViewPatientDetails = () => {
     physicalActivities,
     location,
     User: { fullName, email },
+    gender,
   } = details;
 
   return (
@@ -113,6 +115,7 @@ const ViewPatientDetails = () => {
       <CustomDisplay label="Full Name" value={fullName} />
       <CustomDisplay label="Email" value={email} />
       <CustomDisplay label="Phone number" value={phoneNumber} />
+      <CustomDisplay label="Gender" value={gender} />
       <CustomDisplay label="Age" value={age} />
       <CustomDisplay label="Height" value={height} />
       <CustomDisplay label="Weight" value={weight} />

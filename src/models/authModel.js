@@ -25,6 +25,8 @@ const User = sequelize.define("User", {
   },
 });
 
-User.sync({ force: false }).then(() => console.log("database syncing"));
+User.sync({ force: false, alter: true }).then(() =>
+  console.log("database syncing")
+);
 
 module.exports = User;

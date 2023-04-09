@@ -1,6 +1,6 @@
 import { useTheme } from '@emotion/react';
 import { LoadingButton } from '@mui/lab';
-import { Box, Card, Grid, TextField, Typography } from '@mui/material';
+import { Box, Card, Grid, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import axios from 'axios.js';
 import url from 'connectionString';
@@ -41,6 +41,7 @@ const validationSchema = Yup.object().shape({
   occupation: Yup.string().nullable('please tell what do you do.'),
   physicalActivities: Yup.string().nullable('please tell us if you do any physical activities'),
   location: Yup.string().nullable('please tell us your physical address/location'),
+  gender: Yup.string().nullable('Please select gender'),
 });
 
 const registerDoc = async (data) => {
@@ -65,6 +66,7 @@ const AddPatientInformation = () => {
     occupation: '',
     physicalActivities: '',
     location: '',
+    gender: '',
   });
 
   const fetchDetails = async () => {
@@ -104,6 +106,7 @@ const AddPatientInformation = () => {
     occupation,
     physicalActivities,
     location,
+    gender,
   } = details;
 
   const initialValues = {
@@ -118,6 +121,7 @@ const AddPatientInformation = () => {
     occupation: occupation || '',
     physicalActivities: physicalActivities || '',
     location: location || '',
+    gender: gender || '',
   };
 
   return (
@@ -325,6 +329,29 @@ const AddPatientInformation = () => {
                           error={Boolean(errors.location && touched.location)}
                           sx={{ mb: 3 }}
                         />
+                      </Grid>
+
+                      <Grid item xs={12} lg={6}>
+                        <Select
+                          fullWidth
+                          size="small"
+                          name="gender"
+                          id="demo-simple-select"
+                          label="Select your gender"
+                          value={values.gender}
+                          onChange={handleChange}
+                          variant="outlined"
+                          onBlur={handleBlur}
+                          helperText={touched.gender && errors.gender}
+                          error={Boolean(errors.gender && touched.gender)}
+                        >
+                          <MenuItem value="" disabled>
+                            Select
+                          </MenuItem>
+
+                          <MenuItem value="Male">Male</MenuItem>
+                          <MenuItem value="Female">Female</MenuItem>
+                        </Select>
                       </Grid>
                     </Grid>
                     <LoadingButton

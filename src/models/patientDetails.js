@@ -11,6 +11,10 @@ const PatientDetail = sequelize.define("PatientDetail", {
   patientId: {
     type: DataTypes.BIGINT,
   },
+  gender: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
   phoneNumber: {
     type: DataTypes.STRING,
   },
@@ -56,7 +60,7 @@ const PatientDetail = sequelize.define("PatientDetail", {
 User.hasMany(PatientDetail, { foreignKey: "patientId" });
 PatientDetail.belongsTo(User, { foreignKey: "patientId" });
 
-PatientDetail.sync({ force: false }).then(() =>
+PatientDetail.sync({ force: false, alter: true }).then(() =>
   console.log("database syncing")
 );
 

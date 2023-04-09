@@ -45,6 +45,8 @@ const Care = sequelize.define("Care", {
 User.hasMany(Care, { foreignKey: "createdBy" });
 Care.belongsTo(User, { foreignKey: "createdBy" });
 
-Care.sync({ force: false }).then(() => console.log("database syncing"));
+Care.sync({ force: false, alter: true }).then(() =>
+  console.log("database syncing")
+);
 
 module.exports = Care;
